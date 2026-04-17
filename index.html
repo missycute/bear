@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ezra Voss — Profile</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- ████  ENTER SCREEN  ████ -->
+<div id="enter-screen">
+  <canvas id="enter-canvas"></canvas>
+  <div class="enter-grid-overlay"></div>
+  <div class="enter-scanline"></div>
+
+  <div class="enter-content">
+    <div class="enter-top-hud">
+      <span>SYS.BOOT</span>
+      <span id="enter-clock">00:00:00</span>
+      <span>VER_3.1.4</span>
+    </div>
+
+    <div class="enter-logo-wrap">
+      <div class="enter-hex-ring"></div>
+      <div class="enter-hex-ring enter-hex-ring2"></div>
+      <div class="enter-hex-ring enter-hex-ring3"></div>
+      <div class="enter-name-glitch" data-text="EZRA VOSS">BEAR</div>
+    </div>
+
+    <div class="enter-subtitle">// &nbsp;DIGITAL&nbsp;ARCHITECT&nbsp; · &nbsp;VISUAL&nbsp;PHILOSOPHER&nbsp; //</div>
+    <div class="enter-divider"><span></span><span class="enter-diamond">◆</span><span></span></div>
+    <div class="enter-coords">48.8566°N &nbsp;·&nbsp; 2.3522°E &nbsp;·&nbsp; SYS.ONLINE</div>
+
+    <button id="enter-btn">
+      <div class="enter-btn-border-anim"></div>
+      <span class="enter-btn-inner">
+        <span class="enter-btn-arrow">▶</span>
+        ENTER
+        <span class="enter-btn-arrow">◀</span>
+      </span>
+      <div class="enter-btn-scan"></div>
+    </button>
+
+    <div id="enter-loading" class="enter-loading hidden">
+      <div class="load-bar"><div class="load-fill" id="load-fill"></div></div>
+      <div class="load-text" id="load-text">INITIALIZING...</div>
+    </div>
+
+    <div class="enter-bottom-hud">
+      <span id="enter-counter">▓▓▓▓░░░░░░</span>
+      <span class="hud-sep">|</span>
+      <span>SECURE CONNECTION</span>
+    </div>
+  </div>
+
+  <div class="corner-deco tl"></div>
+  <div class="corner-deco tr"></div>
+  <div class="corner-deco bl"></div>
+  <div class="corner-deco br"></div>
+</div>
+
+
+<!-- ████  PROFILE PAGE  ████ -->
+<div id="profile-page" class="page-hidden">
+  <canvas id="bg-canvas"></canvas>
+
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="orb orb3"></div>
+
+  <div class="profile-shell">
+
+    <!-- HEADER -->
+    <header class="profile-header neon-card reveal">
+      <div class="nba nba-header"></div>
+
+      <div class="avatar-wrap">
+        <div class="avatar-ring ar1"></div>
+        <div class="avatar-ring ar2"></div>
+        <div class="avatar-ring ar3"></div>
+        <div class="avatar-core">
+          <svg viewBox="0 0 100 100" width="76" height="76">
+            <defs>
+              <radialGradient id="avg" cx="40%" cy="35%">
+                <stop offset="0%" stop-color="#7df5ff"/>
+                <stop offset="100%" stop-color="#0a2a4a"/>
+              </radialGradient>
+            </defs>
+            <circle cx="50" cy="50" r="50" fill="#02080f"/>
+            <circle cx="50" cy="38" r="18" fill="url(#avg)" opacity=".8"/>
+            <ellipse cx="50" cy="82" rx="28" ry="20" fill="url(#avg)" opacity=".5"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="profile-info">
+        <div class="sys-tag">// USER_PROFILE.EXE</div>
+        <h1 class="profile-name" data-text="Ezra Voss">BEAR</h1>
+        <div class="profile-handle">
+          <span class="handle-at">@</span>ezra.voss
+          <span class="status-pill"><span class="spulse"></span>ONLINE</span>
+        </div>
+        <div class="badges">
+          <span class="badge">▸ CREATOR</span>
+          <span class="badge">▸ VISIONARY</span>
+          <span class="badge">▸ WANDERER</span>
+        </div>
+      </div>
+
+      <div class="header-stats">
+        <div class="hstat"><span class="hstat-n" id="hs1">0</span><span class="hstat-l">WORKS</span></div>
+        <div class="hstat-sep"></div>
+        <div class="hstat"><span class="hstat-n" id="hs2">0</span><span class="hstat-l">FANS</span></div>
+        <div class="hstat-sep"></div>
+        <div class="hstat"><span class="hstat-n" id="hs3">0</span><span class="hstat-l">RATING</span></div>
+      </div>
+    </header>
+
+    <!-- TABS -->
+    <nav class="tab-nav reveal">
+      <button class="tab-btn active" data-tab="gallery"><span>◈</span> GALLERY</button>
+      <button class="tab-btn" data-tab="music"><span>◉</span> MUSIC</button>
+      <button class="tab-btn" data-tab="friends"><span>◎</span> FRIENDS</button>
+      <button class="tab-btn" data-tab="bio"><span>◇</span> BIO</button>
+      <div class="tab-ink" id="tab-ink"></div>
+    </nav>
+
+    <!-- CONTENT -->
+    <main class="tab-content">
+
+      <!-- GALLERY -->
+      <section class="tab-panel active" id="tab-gallery">
+        <p class="panel-tip">// Replace the <code>src</code> URLs below with any direct image link (imgur, xatimg, picto, etc.)</p>
+        <div class="gallery-grid">
+
+          <div class="g-card g-wide" data-idx="1">
+            <!-- ✏ CHANGE IMAGE: replace src with your own link -->
+            <img class="g-img" src="https://xatimg.com/image/z6EoA62IoSuD.jpg" alt="Solitude"/>
+            <div class="g-glitch"></div>
+            <div class="g-overlay">
+              <span class="g-num">001</span>
+              <span class="g-label">SOLITUDE</span>
+              <span class="g-bar"></span>
+            </div>
+            <div class="g-corners"><i></i><i></i><i></i><i></i></div>
+          </div>
+
+          <div class="g-card" data-idx="2">
+            <!-- ✏ CHANGE IMAGE -->
+            <img class="g-img" src="https://xatimg.com/image/z6EoA62IoSuD.jpg" alt="Neon Drift"/>
+            <div class="g-glitch"></div>
+            <div class="g-overlay">
+              <span class="g-num">002</span>
+              <span class="g-label">NEON DRIFT</span>
+              <span class="g-bar"></span>
+            </div>
+            <div class="g-corners"><i></i><i></i><i></i><i></i></div>
+          </div>
+
+          <div class="g-card" data-idx="3">
+            <!-- ✏ CHANGE IMAGE -->
+            <img class="g-img" src="https://xatimg.com/image/z6EoA62IoSuD.jpg" alt="Fracture"/>
+            <div class="g-glitch"></div>
+            <div class="g-overlay">
+              <span class="g-num">003</span>
+              <span class="g-label">FRACTURE</span>
+              <span class="g-bar"></span>
+            </div>
+            <div class="g-corners"><i></i><i></i><i></i><i></i></div>
+          </div>
+
+          <div class="g-card g-tall" data-idx="4">
+            <!-- ✏ CHANGE IMAGE -->
+            <img class="g-img" src="https://xatimg.com/image/z6EoA62IoSuD.jpg" alt="Depth"/>
+            <div class="g-glitch"></div>
+            <div class="g-overlay">
+              <span class="g-num">004</span>
+              <span class="g-label">DEPTH</span>
+              <span class="g-bar"></span>
+            </div>
+            <div class="g-corners"><i></i><i></i><i></i><i></i></div>
+          </div>
+
+          <div class="g-card" data-idx="5">
+            <!-- ✏ CHANGE IMAGE -->
+            <img class="g-img" src="https://xatimg.com/image/z6EoA62IoSuD.jpg" alt="Bloom"/>
+            <div class="g-glitch"></div>
+            <div class="g-overlay">
+              <span class="g-num">005</span>
+              <span class="g-label">BLOOM</span>
+              <span class="g-bar"></span>
+            </div>
+            <div class="g-corners"><i></i><i></i><i></i><i></i></div>
+          </div>
+
+          <div class="g-card" data-idx="6">
+            <!-- ✏ CHANGE IMAGE -->
+            <img class="g-img" src="https://xatimg.com/image/z6EoA62IoSuD.jpg" alt="Dusk Signal"/>
+            <div class="g-glitch"></div>
+            <div class="g-overlay">
+              <span class="g-num">006</span>
+              <span class="g-label">DUSK SIGNAL</span>
+              <span class="g-bar"></span>
+            </div>
+            <div class="g-corners"><i></i><i></i><i></i><i></i></div>
+          </div>
+
+          <div class="g-card" data-idx="7">
+            <!-- ✏ CHANGE IMAGE -->
+            <img class="g-img" src="https://xatimg.com/image/z6EoA62IoSuD.jpg" alt="Ascent"/>
+            <div class="g-glitch"></div>
+            <div class="g-overlay">
+              <span class="g-num">007</span>
+              <span class="g-label">ASCENT</span>
+              <span class="g-bar"></span>
+            </div>
+            <div class="g-corners"><i></i><i></i><i></i><i></i></div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- MUSIC -->
+      <section class="tab-panel" id="tab-music">
+        <!-- Hidden YouTube -->
+        <iframe id="yt-player"
+          src="https://www.youtube.com/embed/60ItHLz5WEA?enablejsapi=1&rel=0&controls=0&modestbranding=1&showinfo=0"
+          allow="autoplay; encrypted-media"
+          style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none">
+        </iframe>
+
+        <div class="music-shell neon-card">
+          <div class="nba nba-music"></div>
+
+          <div class="music-left">
+            <canvas id="music-canvas" width="220" height="220"></canvas>
+            <div class="music-vinyl">
+              <div class="vinyl-disc" id="vinyl-disc">
+                <div class="vinyl-label">BR</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="music-right">
+            <div class="sys-tag">// NOW_PLAYING</div>
+            <div class="track-title">Alan Walker</div>
+            <div class="track-sub">Faded · Atmospheric · 2015</div>
+
+            <!-- Equaliser bars -->
+            <div class="eq-bars" id="eq-bars"></div>
+
+            <!-- Waveform progress -->
+            <div class="prog-wrap">
+              <span id="t-cur" class="t-lbl">0:00</span>
+              <div class="prog-track" id="prog-track">
+                <div class="prog-fill" id="prog-fill"></div>
+                <div class="prog-thumb" id="prog-thumb"></div>
+              </div>
+              <span id="t-tot" class="t-lbl">3:33</span>
+            </div>
+
+            <!-- Controls -->
+            <div class="ctrl-row">
+              <button class="cbtn csm" id="btn-prev" title="Restart">⏮</button>
+
+              <button class="cbtn cmain" id="btn-play">
+                <svg id="play-icon" viewBox="0 0 24 24" width="28" height="28"><polygon points="6,3 20,12 6,21" fill="currentColor"/></svg>
+                <svg id="pause-icon" viewBox="0 0 24 24" width="28" height="28" style="display:none"><rect x="5" y="3" width="4" height="18" fill="currentColor"/><rect x="15" y="3" width="4" height="18" fill="currentColor"/></svg>
+              </button>
+
+              <button class="cbtn csm" id="btn-next" title="Restart">⏭</button>
+            </div>
+
+            <!-- Volume -->
+            <div class="vol-row">
+              <button class="cbtn cvol" id="btn-vol-down">−</button>
+              <div class="vol-track-wrap">
+                <div class="vol-track">
+                  <div class="vol-fill" id="vol-fill" style="width:75%"></div>
+                </div>
+                <input type="range" id="vol-slider" min="0" max="100" value="75" class="vol-range"/>
+              </div>
+              <button class="cbtn cvol" id="btn-vol-up">+</button>
+              <span id="vol-display">75%</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FRIENDS -->
+      <section class="tab-panel" id="tab-friends">
+        <div class="friends-grid">
+
+          <a class="friend-card neon-card" href="http://xat.me/Hate" target="_blank" rel="noopener">
+            <div class="nba nba-friend"></div>
+            <div class="friend-avatar" style="--fhue:195">L</div>
+            <div class="friend-info">
+              <span class="friend-name">Luna Veil</span>
+              <span class="friend-tag">@lunaveil</span>
+            </div>
+            <div class="friend-visit">VISIT ›</div>
+          </a>
+
+          <a class="friend-card neon-card" href="http://xat.me/Hate" target="_blank" rel="noopener">
+            <div class="nba nba-friend"></div>
+            <div class="friend-avatar" style="--fhue:210">K</div>
+            <div class="friend-info">
+              <span class="friend-name">Kai Dusk</span>
+              <span class="friend-tag">@kaidusk</span>
+            </div>
+            <div class="friend-visit">VISIT ›</div>
+          </a>
+
+          <a class="friend-card neon-card" href="http://xat.me/Hate" target="_blank" rel="noopener">
+            <div class="nba nba-friend"></div>
+            <div class="friend-avatar" style="--fhue:180">S</div>
+            <div class="friend-info">
+              <span class="friend-name">Sora Nyx</span>
+              <span class="friend-tag">@soranyx</span>
+            </div>
+            <div class="friend-visit">VISIT ›</div>
+          </a>
+
+          <a class="friend-card neon-card" href="http://xat.me/Hate" target="_blank" rel="noopener">
+            <div class="nba nba-friend"></div>
+            <div class="friend-avatar" style="--fhue:220">R</div>
+            <div class="friend-info">
+              <span class="friend-name">Rex Hollow</span>
+              <span class="friend-tag">@rexhollow</span>
+            </div>
+            <div class="friend-visit">VISIT ›</div>
+          </a>
+
+          <a class="friend-card neon-card" href="http://xat.me/Hate" target="_blank" rel="noopener">
+            <div class="nba nba-friend"></div>
+            <div class="friend-avatar" style="--fhue:200">A</div>
+            <div class="friend-info">
+              <span class="friend-name">Ayla Storm</span>
+              <span class="friend-tag">@aylastorm</span>
+            </div>
+            <div class="friend-visit">VISIT ›</div>
+          </a>
+
+          <a class="friend-card neon-card" href="http://xat.me/Hate" target="_blank" rel="noopener">
+            <div class="nba nba-friend"></div>
+            <div class="friend-avatar" style="--fhue:185">Z</div>
+            <div class="friend-info">
+              <span class="friend-name">Zion Ether</span>
+              <span class="friend-tag">@zionether</span>
+            </div>
+            <div class="friend-visit">VISIT ›</div>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- BIO -->
+      <section class="tab-panel" id="tab-bio">
+        <div class="bio-shell neon-card">
+          <div class="nba nba-bio"></div>
+          <div class="bio-hud-row">
+            <div class="sys-tag">// USER_BIO.DAT</div>
+            <div class="bio-signal"><span></span><span></span><span></span></div>
+          </div>
+          <blockquote class="bio-quote">
+            <span class="qm">"</span>I live between what is real and what is felt — in the margins where most people forget to look.<span class="qm">"</span>
+          </blockquote>
+          <div class="bio-body">
+            <p>Born under a wanderer's sky, <strong>Ezra Voss</strong> is a digital artist, creative coder, and lifestyle philosopher existing at the intersection of technology and raw human emotion. Every project — a fingerprint. Unmistakable. Unrepeatable.</p>
+            <p>By day, a builder of worlds in code. By night, a seeker of forgotten aesthetics — glitch architecture, mountain silence rendered in pixels, golden-hour warmth translated into vector precision.</p>
+            <p>Believes that <em>the most dangerous creative act is simplicity</em> — removing everything unnecessary until only truth remains.</p>
+          </div>
+          <div class="bio-stats" id="bio-stats">
+            <div class="bstat">
+              <span class="bstat-n" data-target="247" data-suf="">0</span>
+              <div class="bstat-bar"><div class="bstat-fill" style="--w:82%"></div></div>
+              <span class="bstat-l">PROJECTS</span>
+            </div>
+            <div class="bstat">
+              <span class="bstat-n" data-target="18" data-suf="K">0</span>
+              <div class="bstat-bar"><div class="bstat-fill" style="--w:90%"></div></div>
+              <span class="bstat-l">FOLLOWERS</span>
+            </div>
+            <div class="bstat">
+              <span class="bstat-n" data-target="4.9" data-suf="★">0</span>
+              <div class="bstat-bar"><div class="bstat-fill" style="--w:98%"></div></div>
+              <span class="bstat-l">RATING</span>
+            </div>
+          </div>
+          <div class="bio-tags">
+            <span>// digital.art</span>
+            <span>// lifestyle.design</span>
+            <span>// generative.code</span>
+            <span>// visual.philosophy</span>
+            <span>// nomadic.spirit</span>
+            <span>// future.culture</span>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
